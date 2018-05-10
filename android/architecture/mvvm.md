@@ -1,7 +1,9 @@
 # Links
 
 ## GitHub
+
 - [florina-muntenescu/MVPvsMVVM](https://github.com/florina-muntenescu/MVPvsMVVM)
+- [MindorksOpenSource/android-mvvm-architecture](https://github.com/MindorksOpenSource/android-mvvm-architecture)
 
 ## Medium
 
