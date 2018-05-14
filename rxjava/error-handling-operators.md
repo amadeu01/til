@@ -24,3 +24,10 @@ exception.
 ```java
 .onErrorReturn(throwable -> new EmptyObject())
 ```
+
+
+## Why I found that content
+
+I was looking up a way to handle retrofit error without interrupt my stream of data. Then, I found that [question](https://stackoverflow.com/questions/40188325/rxjava-database-and-remote-server).
+Which lead me to that [repository](https://github.com/ReactiveX/RxJava/wiki/Error-Handling-Operators) 
+which I had already seen, but never given the right attention to it.
