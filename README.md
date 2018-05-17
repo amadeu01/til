@@ -6,8 +6,8 @@ These are mostly things I learn by pairing with smart people or reading some coo
 
 # Topics
 
-1. iOS
-2. Android
-3. RxJava
-4. Design Patterns
-5. Swift
+1. [iOS](ios/README.md)
+2. [Android](android/README.md)
+3. [RxJava](rxjava/README.md)
+4. [Design Patterns](design-patterns/README.md)
+5. [Swift](swift/README.md)
