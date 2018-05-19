@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Jekyll TIL!"
+date:   2018-05-19 09:50:01 -0600
+categories: jekyll update
+---
+
 # Jekyll
 
 Today I learned how to make a `"post"` using jekyll as a static web generator.
