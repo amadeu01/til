@@ -2,3 +2,13 @@ theme: jekyll-theme-cayman
 base-url: /til
 title: Today I Learned by Amadeu
 description: This is a collection of concise write-ups of small things I've learned day to day across a variety of languages and technologies.
+plugins:
+   - jekyll-mentions
+   - jemoji
+   - jekyll-redirect-from
+   - jekyll-sitemap
+   - jekyll-feed
+   - jekyll-seo-tag
+   - jekyll-sitemap
+   - jekyll-avatar
+   - jekyll-include-cache
