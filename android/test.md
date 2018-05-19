@@ -1,3 +1,8 @@
+---
+title: This is my title
+layout: post
+---
+
 # Instrumented Test
 
 Instrumented unit tests are tests that run on physical devices and emulators, 
