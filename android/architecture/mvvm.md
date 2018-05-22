@@ -1,3 +1,8 @@
+---
+title: Architecture MVVM
+layout: default
+---
+
 # Links
 
 ## GitHub

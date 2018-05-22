@@ -1,11 +1,16 @@
+---
+title: Networking with Retrofit
+layout: default
+---
+
 # Retrofit
 
 - [Github](https://github.com/square/retrofit)
 
-If you want to know the the status code of the request response. And you are using the [RxJava2 adpater](https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2) 
+If you want to know the the status code of the request response. And you are using the [RxJava2 adpater](https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2)
  you could do something like:
- 
- ```java 
+
+ ```java
 import io.reactivex.Single;
 import okhttp3.ResponseBody;
 import retrofit2.Response;
@@ -14,13 +19,13 @@ import retrofit2.http.POST;
 
  @POST("api/something")
  Single<Response<ResponseBody>> apiCall(@Body body);
- 
+
  ```
- 
+
  and then:
- 
+
  ```java
- 
+
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -41,10 +46,9 @@ public class Remote {
     }
 }
 
- 
+
  ```
- 
- 
- **ResponseBody** is useful when you do not really care about what you want retrieve from the api request call. 
+
+
+ **ResponseBody** is useful when you do not really care about what you want retrieve from the api request call.
  Or, if you want to parse the response manually.
- 

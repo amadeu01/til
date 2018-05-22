@@ -1,6 +1,6 @@
 ---
 title: Swift Concurrency
-layout: post
+layout: default
 ---
 
 - [Concurrency](https://www.uraimo.com/2017/05/07/all-about-concurrency-in-swift-1-the-present/)

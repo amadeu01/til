@@ -1,3 +1,8 @@
+---
+title: Architecture
+layout: default
+---
+
 # Viper
 
 `VIPER` is an acronymous for View Interator Presenter Entity Route. Which does not make sense at your first glance
