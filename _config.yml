@@ -15,3 +15,5 @@ plugins:
 collections:
   tils:
     output: true
+  ios:
+    output: true
