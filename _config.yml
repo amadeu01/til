@@ -12,3 +12,6 @@ plugins:
    - jekyll-sitemap
    - jekyll-avatar
    - jekyll-include-cache
+collections:
+  tils:
+    output: true
