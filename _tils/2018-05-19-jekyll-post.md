@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: default
 title:  "Jekyll TIL!"
 date:   2018-05-19 09:50:01 -0600
-categories: jekyll update
+categories: tils
 ---
 
 # Jekyll
