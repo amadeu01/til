@@ -1,8 +1,13 @@
+---
+title: Playground Til's
+layout: default
+---
+
 # Use a custom framework in a playground
 
 **For XCode 9**
 
-Use the functionality provided by a custom framework in your playground. 
+Use the functionality provided by a custom framework in your playground.
 Before using a framework, you must convert your playground to a workspace.
 
 ## Convert your playground project to a workspace
@@ -53,4 +58,3 @@ import MyCustomFramework
 5. Compile that new framework you created (If you use any 3rd party library, you can add to that framework as well)
 
 6. Import on your playground using ```@testable import CustomFramework```
-

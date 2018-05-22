@@ -17,3 +17,13 @@ collections:
     output: true
   ios:
     output: true
+  swift:
+    output: true
+  rxjava:
+    output: true
+  android:
+    output: true
+  ios-macos:
+    output: true
+  design-patterns:
+    output: true

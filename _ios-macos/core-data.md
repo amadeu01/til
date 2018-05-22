@@ -1,3 +1,8 @@
+---
+title: Core Data
+layout: default
+---
+
 # Core Data
 
 ## Upsert in Core Data.
@@ -30,3 +35,9 @@ Like, if you have an object of **Products** which have the `productBarCode` as s
 managedObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
 ```
+## Core data Unit Tests
+
+TODO: Write about core data unit test
+
+- How to write a test using coredata?
+- How can use coredata on xtests?
