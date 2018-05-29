@@ -1,3 +1,8 @@
+---
+title: Design Pattern
+layout: default
+---
+
 ## Factory Method Design Pattern
 This patterns is one of the *Creational Pattern*
 

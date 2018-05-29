@@ -1,3 +1,8 @@
+---
+title: Multithreading
+layout: default
+---
+
 # Defining Multithreading Terms
 
 |       Term      |                     Definition                 |

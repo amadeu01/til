@@ -1,3 +1,8 @@
+---
+title: RxJava tests troubles and solutions
+layout: default
+---
+
 # This is dedicated to test with RxJava
 
 ## How to test something async with JUnit?
@@ -28,14 +33,14 @@ long[] ItemIds = mDb.ItemDao().insert(Item);
 Item item = mDb.ItemDao().findItemById(ItemIds[0])
 ```
 
-The item returned is not null. And I got the item. 
+The item returned is not null. And I got the item.
 
 The same problem occoured when I tried with `.blockingGet()` function.
 
 
 ## Problem with `Schedulers`
 
-I had some problems with `Schedulers` and threads where the things was going on. 
+I had some problems with `Schedulers` and threads where the things was going on.
 So, I fixed but changing the default implementations of schedulers that I had used on the app.
 
 ```java
@@ -66,7 +71,7 @@ So, I fixed but changing the default implementations of schedulers that I had us
         RxJavaPlugins.reset();
         RxAndroidPlugins.reset();
     }
-    
+
 ```
 
 

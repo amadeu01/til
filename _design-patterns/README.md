@@ -1,3 +1,8 @@
+---
+title: Design Pattern Index Til's
+layout: default
+---
+
 # Design Patterns
 
 This is a subfolder of my TIL's about [design patterns](/design-patterns/design-pattern-definition.md).

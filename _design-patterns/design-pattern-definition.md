@@ -1,3 +1,8 @@
+---
+title: Design Pattern
+layout: default
+---
+
 # Design Patterns
 
 > “Sets of repeatedly applied design rules are called design patterns ”

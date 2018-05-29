@@ -1,3 +1,8 @@
+---
+title: Error Handling
+layout: default
+---
+
 # Error Handling Operators
 
 There are a variety of operators that you can use to react to or recover from onError notifications from Observables. For example, you might:
@@ -15,9 +20,9 @@ There are a variety of operators that you can use to react to or recover from on
 5. retryWhen( ) — if a source Observable emits an error, pass that error to another Observable to determine whether to resubscribe to the source
 
 
-## Usage 
+## Usage
 
-- With `onErrorReturn`, you will change an exception for another item on your stream. 
+- With `onErrorReturn`, you will change an exception for another item on your stream.
 So, it might be useful to flag that item as useless and then use filter to ignore that item that was a replace for your
 exception.
 
@@ -29,5 +34,5 @@ exception.
 ## Why did I find that content?
 
 I was looking up a way to handle retrofit error without interrupt my stream of data. Then, I found that [question](https://stackoverflow.com/questions/40188325/rxjava-database-and-remote-server).
-Which lead me to that [repository](https://github.com/ReactiveX/RxJava/wiki/Error-Handling-Operators) 
+Which lead me to that [repository](https://github.com/ReactiveX/RxJava/wiki/Error-Handling-Operators)
 which I had already seen, but never given the right attention to it.
