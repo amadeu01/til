@@ -1,3 +1,8 @@
+---
+title: Architecture
+layout: default
+---
+
 # Segue types
 
 | Segue type | Behavior |
