@@ -29,3 +29,8 @@ afterAll(async () => {
 
 the `await detox.init(config, { launchApp: false });` is necessary once you want to avoid the initialization 
 without set the notification permission.
+
+
+[StackoverFlow](https://stackoverflow.com/questions/57057132/enable-notification-while-test-with-detox-isnt-working/57058153#57058153)
+
+[Detox github](https://github.com/wix/Detox)
