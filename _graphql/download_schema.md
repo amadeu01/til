@@ -1,6 +1,6 @@
 ## Download Schema
 
-To get the `schema.graphql` I used [this CLI](ttps://github.com/graphql-cli/graphql-cli)
+To get the `schema.graphql` I used [this CLI](https://github.com/graphql-cli/graphql-cli)
 
 Also I had some minor issue getting the scheme behide some authenticated server. So, I found this [issue](https://github.com/prisma/vscode-graphql/issues/68)
 
