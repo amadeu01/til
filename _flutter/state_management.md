@@ -14,3 +14,5 @@
 - [Coreconcepts/Lib by felangel](https://felangel.github.io/bloc/#/coreconcepts)
 - [Architect your Flutter project using BLOC pattern](https://medium.com/flutterpub/architecting-your-flutter-project-bd04e144a8f1)
 - [Effective bloc pattern](https://medium.com/flutterpub/effective-bloc-pattern-45c36d76d5fe)
+- [Reactive Programming - Streams - BLoC](https://www.didierboelens.com/2018/08/reactive-programming---streams---bloc/)
+- [Reactive Programming - Streams - BLoC - Practical Use Cases](https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases/)
