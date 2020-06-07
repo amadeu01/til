@@ -5,7 +5,7 @@ layout: default
 
 # Design Patterns
 
-This is a subfolder of my TIL's about [design patterns](/design-patterns/design-pattern-definition.md).
+This is a subfolder of my TIL's about [design patterns](/til/design-patterns/design-pattern-definition.html).
 
 Architectures that I might talk about.
 
