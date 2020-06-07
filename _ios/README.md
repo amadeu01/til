@@ -11,5 +11,5 @@ Here, I will gather all subjects somehow related to `iOS` :smile_cat:
 
 ## List
 
-1. [Architecture](/ios/architecture.html)
-2. [Navigation](/ios/segue/navigations.html)
+1. [Architecture](architecture.html)
+2. [Navigation](navigations.html)
