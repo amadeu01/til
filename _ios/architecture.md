@@ -1,6 +1,8 @@
 ---
-title: Architecture
-layout: default
+title: Architecture Bundle
+layout: post
+date: 2020-06-07 18:11:09
+categories: Architecture Pattern
 ---
 
 # Viper

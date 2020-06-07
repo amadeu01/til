@@ -1,3 +1,10 @@
+---
+title: GraphQL
+layout: post
+date: 2020-06-07 18:09:39
+categories: GraphQL Network
+---
+
 ## Download Schema
 
 To get the `schema.graphql` I used [this CLI](https://github.com/graphql-cli/graphql-cli)

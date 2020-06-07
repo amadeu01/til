@@ -1,3 +1,10 @@
+---
+title: Flutter Info Bundle
+layout: post
+date: 2020-06-07 18:11:09
+categories: Flutter Mobile
+---
+
 ## Libs
 - [Provider](https://github.com/rrousselGit/provider)
 - [Bloc implementation](https://felangel.github.io/bloc/)

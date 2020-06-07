@@ -1,3 +1,12 @@
+---
+title: xcodebuild Command Line
+layout: post
+date: 2020-06-07 18:11:09
+categories: iOS RN Testing CLI Detox
+---
+
+## Problem setting up detox 🤭
+
 When I had to test with iOS build and detox, the annoying yellow box was blocking the automated test.
 So, I found out about the flag the react-native uses in their iOS-environment [here](https://github.com/facebook/react-native/blob/cf77067f0c4eda30f814aafa45ddf962eadcfbdb/React/Base/RCTUtils.m#L467-L476).
 

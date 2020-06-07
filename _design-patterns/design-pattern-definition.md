@@ -1,6 +1,8 @@
 ---
 title: Design Pattern
-layout: default
+layout: post
+date: 2020-06-07 18:09:39
+categories: DesignPattern
 ---
 
 # Design Patterns

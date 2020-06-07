@@ -1,6 +1,7 @@
 ---
 title: iOS Til's
 layout: default
+date: 2020-06-07 18:13:07
 ---
 
 # iOS topics

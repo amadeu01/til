@@ -1,12 +1,21 @@
+---
+title: React Native (Detox)
+layout: post
+date: 2020-06-07 18:11:09
+categories: Mobile RN test
+---
+
+## 🤔 How to use Detox?
+
 When use `Detox`, you should also init it properly in the `init.js` file.
 
 When use jest:
 
 ```js
-const detox = require('detox');
-const adapter = require('detox/runners/jest/adapter');
-const specReporter = require('detox/runners/jest/specReporter');
-const config = require('../package.json').detox;
+const detox = require("detox");
+const adapter = require("detox/runners/jest/adapter");
+const specReporter = require("detox/runners/jest/specReporter");
+const config = require("../package.json").detox;
 
 jest.setTimeout(120000);
 jasmine.getEnv().addReporter(adapter);
@@ -14,7 +23,7 @@ jasmine.getEnv().addReporter(specReporter);
 
 beforeAll(async () => {
   await detox.init(config, { launchApp: false });
-  await device.launchApp({ permissions: { notifications: 'YES' } });
+  await device.launchApp({ permissions: { notifications: "YES" } });
 });
 
 beforeEach(async () => {
@@ -27,9 +36,8 @@ afterAll(async () => {
 });
 ```
 
-the `await detox.init(config, { launchApp: false });` is necessary once you want to avoid the initialization 
+The `await detox.init(config, { launchApp: false });` is necessary once you want to avoid the initialization
 without set the notification permission.
-
 
 [StackoverFlow](https://stackoverflow.com/questions/57057132/enable-notification-while-test-with-detox-isnt-working/57058153#57058153)
 

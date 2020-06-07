@@ -1,6 +1,7 @@
 ---
 title: Core Data
-layout: default
+layout: post
+data: 2020-06-07 18:19:04
 ---
 
 # Core Data
