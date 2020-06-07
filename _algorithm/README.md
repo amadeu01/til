@@ -1,5 +1,5 @@
 ---
-title: TIL about Algorithm 
+title: My TIL summary for Algorithm
 layout: default
 ---
 

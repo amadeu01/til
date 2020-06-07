@@ -27,3 +27,5 @@ collections:
     output: true
   design-patterns:
     output: true
+  algorithm:
+    output: true
