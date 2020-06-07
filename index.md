@@ -1,3 +1,8 @@
+---
+title: Home
+layout: home
+---
+
 # My TILs
 
 This is a collection of concise write-ups of small things I've learned day to day across a variety of languages and technologies.
@@ -8,9 +13,9 @@ I can find out about my early learnings on something. Feel free to enjoy my jour
 
 # Topics
 
-1. [iOS](_ios/README.md)
-2. [Android](_android/README.md)
-3. [RxJava](_rxjava/README.md)
-4. [Design Patterns](_design-patterns/README.md)
-5. [Swift](_swift/README.md)
-5. [Algorithm](_algorithm/README.md)
+1. [iOS](ios/README.html)
+2. [Android](android/README.html)
+3. [RxJava](rxjava/README.html)
+4. [Design Patterns](design-patterns/README.html)
+5. [Swift](swift/README.html)
+5. [Algorithm](algorithm/README.html)
