@@ -1,4 +1,3 @@
-theme: jekyll-theme-cayman
 base-url: /til
 title: Today I Learned by Amadeu
 description: This is a collection of concise write-ups of small things I've learned day to day across a variety of languages and technologies.
@@ -29,3 +28,13 @@ collections:
     output: true
   algorithm:
     output: true
+remote_theme: thelehhman/plainwhite-jekyll
+plainwhite:
+  name: Amadeu Cavalcante
+  tagline: Mobile Developer.
+  date_format: "%-d of %b, %Y"
+
+  social_links:
+    twitter: amadeucavalcant
+    github: amadeu01
+    linkedIn: in/amadeu01
