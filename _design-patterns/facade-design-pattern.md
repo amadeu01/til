@@ -1,6 +1,8 @@
 ---
 title: Facade Design Pattern
-layout: default
+layout: post
+date: 2020-06-07 15:13:08
+categories: DesignPattern
 ---
 
 # Facade

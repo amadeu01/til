@@ -1,12 +1,17 @@
 ---
 title: Binary Search
 layout: post
+date: 2020-06-07 14:57:43
+categories: Algorithm
 ---
 
-## Binary Search
+## Content
 
 - [Really helpful content](https://www.geeksforgeeks.org/the-ubiquitous-binary-search-set-1/)
 - [Wiki](https://en.wikipedia.org/wiki/Binary_search_algorithm#:~:text=In%20computer%20science%2C%20binary%20search,middle%20element%20of%20the%20array.)
+
+
+## Implementations
 
 My first attempt to write binary search was something like below 🔽
 
