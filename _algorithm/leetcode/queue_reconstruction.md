@@ -85,6 +85,16 @@ func reconstructQueue(_ people: [[Int]]) -> [[Int]] {
 }
 ```
 
+#### Second Approach
+
+We can follow the steps for the test case of ⤵️
+
+- `let input = [[7,0], [4,4], [7,1], [5,0], [6,1], [5,2]]`
+
+You can see the steps until the resolution and find the answer of 🎺
+
+`[[5, 0], [7, 0], [5, 2], [6, 1], [4, 4], [7, 1]]`
+
 ```
 currentPersonHeight 4
 currentPersonEmptyOnFront 4
