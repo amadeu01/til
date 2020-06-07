@@ -33,6 +33,8 @@ plainwhite:
   name: Amadeu Cavalcante
   tagline: Mobile Developer.
   date_format: "%-d of %b, %Y"
+  search: true
+  dark_mode: true
 
   social_links:
     twitter: amadeucavalcant
