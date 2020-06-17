@@ -18,4 +18,7 @@ I can find out about my early learnings on something. Feel free to enjoy my jour
 3. [RxJava](rxjava/README.html)
 4. [Design Patterns](design-patterns/README.html)
 5. [Swift](swift/README.html)
-5. [Algorithm](algorithm/README.html)
+6. [Algorithm](algorithm/README.html)
+7. [React Native](react_native/README.html)
+8. [MacOS](react_native/README.html)
+9. [MacOS](graphql/README.html)
