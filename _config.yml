@@ -24,6 +24,10 @@ collections:
     output: true
   ios-macos:
     output: true
+  graphql:
+    output: true
+  react-native:
+    output: true
   design-patterns:
     output: true
   algorithm:
