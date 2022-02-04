@@ -1,7 +1,6 @@
 ---
-title: Coin change (Second)
+title: Find All Anagrams in a String
 layout: post
-date: 2022-02-02 22:40:00
 categories: Algorithm Leetcode
 ---
 
