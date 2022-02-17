@@ -16,7 +16,14 @@ layout: default
 
 - https://blog.shahjalalshohag.com/topic-list/
 - [Dynamic programming learn path](https://codeforces.com/blog/entry/67679)
+- [LIS (Longest Increasing Sequence)](https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/)
+
 
 ## Github
 
 - https://github.com/TheAlgorithms
+- https://github.com/bradhanson/coderbyte
+
+# Sites
+
+- https://the-algorithms.com/
