@@ -1,28 +1,31 @@
-# MVVM with Zustand in React Native
+# 🚀 MVVM with Zustand in React Native
 
-Exploring the integration of MVVM (Model-View-ViewModel) architecture with Zustand state management in a React Native application, specifically handling authentication and session management.
+Exploring the integration of the MVVM (Model-View-ViewModel) architecture with Zustand state management in a React Native application, specifically for handling authentication and session management.
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 src
-├── services
-│   └── AuthService.ts
-├── stores
-│   └── sessionStore.ts
-├── viewModels
-│   └── useAuthViewModel.ts
-├── views
-│   ├── Splash.tsx
-│   ├── Login.tsx
-│   └── Home.tsx
+├── 📄 App.tsx
+├── 📂 services
+│   ├── 🔑 AuthService.ts
+│   ├── 🧪 MockAuthService.ts
+│   └── 📄 index.ts
+├── 📂 stores
+│   └── 🌐 sessionStore.ts
+├── 📂 viewModels
+│   └── 📌 useAuthViewModel.ts
+├── 📂 views
+│   ├── 🚦 Splash.tsx
+│   ├── 🔐 Login.tsx
+│   └── 🏠 Home.tsx
 ```
 
-## Implementation
+## 🛠️ Implementation
 
-### 1. Session Store (Zustand)
+### 🌐 Session Store (Zustand)
 
-Responsible for holding session-related state globally:
+Responsible for global session state management:
 
 **stores/sessionStore.ts**
 ```typescript
@@ -47,9 +50,9 @@ export const useSessionStore = create<SessionState>((set) => ({
 }));
 ```
 
-### 2. Authentication Service
+### 🔑 Authentication Service
 
-Encapsulates the authentication logic:
+Encapsulates authentication logic:
 
 **services/AuthService.ts**
 ```typescript
@@ -66,13 +69,18 @@ export interface AuthResponse {
   token: string;
 }
 
-export class AuthService {
-  static async login(credentials: LoginCredentials): Promise<AuthResponse> {
+export interface IAuthService {
+  login(credentials: LoginCredentials): Promise<AuthResponse>;
+  validateToken(token: string): Promise<boolean>;
+}
+
+export class AuthService implements IAuthService {
+  async login(credentials: LoginCredentials): Promise<AuthResponse> {
     const response = await axios.post<AuthResponse>('/api/login', credentials);
     return response.data;
   }
 
-  static async validateToken(token: string): Promise<boolean> {
+  async validateToken(token: string): Promise<boolean> {
     try {
       await axios.get('/api/validate-token', {
         headers: { Authorization: `Bearer ${token}` },
@@ -85,14 +93,48 @@ export class AuthService {
 }
 ```
 
-### 3. ViewModel (MVVM)
+### 🧪 Dependency Injection & Mocking
 
-Custom hook encapsulating authentication logic:
+Define interfaces for flexible service implementations:
+
+**services/MockAuthService.ts**
+```typescript
+import { IAuthService, AuthResponse, LoginCredentials } from './AuthService';
+
+export class MockAuthService implements IAuthService {
+  async login(credentials: LoginCredentials): Promise<AuthResponse> {
+    return {
+      id: '123',
+      email: credentials.email,
+      token: 'mock-token',
+    };
+  }
+
+  async validateToken(token: string): Promise<boolean> {
+    return token === 'mock-token';
+  }
+}
+```
+
+**services/index.ts**
+```typescript
+import { AuthService } from './AuthService';
+import { MockAuthService } from './MockAuthService';
+
+const authService = __DEV__ ? new MockAuthService() : new AuthService();
+
+export { authService };
+```
+
+### 📌 ViewModel (MVVM)
+
+Custom hook leveraging injected services:
 
 **viewModels/useAuthViewModel.ts**
 ```typescript
 import { useState } from 'react';
-import { AuthService, LoginCredentials } from '../services/AuthService';
+import { LoginCredentials } from '../services/AuthService';
+import { authService } from '../services';
 import { useSessionStore } from '../stores/sessionStore';
 
 export const useAuthViewModel = () => {
@@ -104,7 +146,7 @@ export const useAuthViewModel = () => {
     setLoading(true);
     setError(null);
     try {
-      const authUser = await AuthService.login(credentials);
+      const authUser = await authService.login(credentials);
       setUser(authUser);
     } catch {
       setError('Invalid email or password.');
@@ -114,9 +156,7 @@ export const useAuthViewModel = () => {
     }
   };
 
-  const logout = () => {
-    clearUser();
-  };
+  const logout = () => clearUser();
 
   const isAuthenticated = () => !!user?.token;
 
@@ -124,98 +164,44 @@ export const useAuthViewModel = () => {
 };
 ```
 
-### 4. Views
+### 🎨 Creating & Running the App
 
-#### Splash View
+#### 📄 App Entry (`App.tsx`)
 
-Determines navigation based on authentication status:
-
-**views/Splash.tsx**
-```tsx
-import React, { useEffect } from 'react';
-import { View, ActivityIndicator } from 'react-native';
-import { useAuthViewModel } from '../viewModels/useAuthViewModel';
-import { useNavigation } from '@react-navigation/native';
-import { AuthService } from '../services/AuthService';
-
-const Splash: React.FC = () => {
-  const { user, logout } = useAuthViewModel();
-  const navigation = useNavigation();
-
-  useEffect(() => {
-    const checkSession = async () => {
-      if (user?.token && await AuthService.validateToken(user.token)) {
-        navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
-      } else {
-        logout();
-        navigation.reset({ index: 0, routes: [{ name: 'Login' }] });
-      }
-    };
-
-    checkSession();
-  }, []);
-
-  return (
-    <View className="flex-1 justify-center items-center">
-      <ActivityIndicator size="large" />
-    </View>
-  );
-};
-
-export default Splash;
-```
-
-#### Login View
-
-Handles user login:
-
-**views/Login.tsx**
-```tsx
-import React, { useState } from 'react';
-import { View, TextInput, Button, Text, ActivityIndicator } from 'react-native';
-import { useAuthViewModel } from '../viewModels/useAuthViewModel';
-
-const Login: React.FC = () => {
-  const { login, isLoading, error } = useAuthViewModel();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  return (
-    <View className="p-4">
-      <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
-      <TextInput placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
-      {error && <Text className="text-red-500">{error}</Text>}
-      {isLoading ? <ActivityIndicator /> : <Button title="Login" onPress={() => login({ email, password })} />}
-    </View>
-  );
-};
-
-export default Login;
-```
-
-#### Home View
-
-Displays authenticated user info:
-
-**views/Home.tsx**
 ```tsx
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { useAuthViewModel } from '../viewModels/useAuthViewModel';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Splash from './views/Splash';
+import Login from './views/Login';
+import Home from './views/Home';
 
-const Home: React.FC = () => {
-  const { user, logout } = useAuthViewModel();
+const Stack = createStackNavigator();
 
-  return (
-    <View className="flex-1 p-4">
-      <Text className="text-xl font-bold">Welcome, {user?.email}</Text>
-      <Button title="Logout" onPress={logout} />
-    </View>
-  );
-};
+const App: React.FC = () => (
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="Splash">
+      <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
 
-export default Home;
+export default App;
 ```
 
-This approach effectively leverages MVVM principles alongside Zustand for scalable, maintainable state management.
+### 🌟 Store Initialization & Injection
+
+- Zustand stores are automatically global, requiring no explicit initialization.
+- ViewModels directly import and utilize stores through Zustand hooks, simplifying dependency management.
+
+## 🔧 Dependency Injection & Build Flavors
+
+- Easily swap implementations for different environments (development, testing, production).
+- Enhances modularity and simplifies testing.
+
+## 🎯 Summary
+
+Leveraging MVVM principles, Zustand state management, and dependency injection creates a scalable, maintainable, and easily testable React Native application. This setup supports rapid development with minimal boilerplate. 🚀📱✨
 
