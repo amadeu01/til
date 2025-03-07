@@ -113,3 +113,68 @@ struct ErrorWrapper: Error, Hashable {
         }
     }
 ```
+
+## TIL (Today I Learned) - March 6, 2025
+
+When trying to truncate `Text` in SwiftUI without showing ellipses (`...`), I found out that there's no native support for something like `.truncationMode(.none)`. Surprisingly, SwiftUI doesn't provide a straightforward way to truncate the text by simply ignoring the last overflowing word—it's either truncated with ellipses or fully displayed.
+
+The workaround involves creating a custom wrapper using UIKit's `UILabel` to manually measure text size and decide exactly where to truncate, thereby preventing the ellipses from showing up.
+
+Here's an example of a custom SwiftUI view using UIKit internally to handle this:
+
+```swift
+import UIKit
+import SwiftUI
+
+struct TruncatedText: View {
+    let text: String
+    let lineLimit: Int
+
+    @State private var truncatedText: String = ""
+
+    var body: some View {
+        GeometryReader { geometry in
+            Text(truncatedText)
+                .lineLimit(lineLimit)
+                .onAppear {
+                    truncatedText = truncateText(
+                        text,
+                        lineLimit: lineLimit,
+                        maxWidth: geometry.size.width
+                    )
+                }
+        }
+    }
+
+    func truncateText(_ text: String, lineLimit: Int, maxWidth: CGFloat) -> String {
+        let words = text.split(separator: " ")
+        var truncated = ""
+
+        for word in words {
+            let testText = truncated.isEmpty ? String(word) : truncated + " " + word
+
+            let uiLabel = UILabel()
+            uiLabel.numberOfLines = lineLimit
+            uiLabel.lineBreakMode = .byTruncatingTail
+            uiLabel.font = UIFont.systemFont(ofSize: 17)
+            uiLabel.text = testText
+
+            let size = uiLabel.sizeThatFits(CGSize(width: maxWidth, height: .greatestFiniteMagnitude))
+
+            if size.height > uiLabel.font.lineHeight * CGFloat(lineLimit) {
+                break
+            } else {
+                truncated = testText
+            }
+        }
+
+        return truncated
+    }
+}
+```
+
+I think UIKit handled this scenario better with simpler native solutions compared to SwiftUI.
+
+### #swiftUI #iOSDevelopment #UIKit #TIL
+
+
