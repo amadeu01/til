@@ -178,3 +178,12 @@ I think UIKit handled this scenario better with simpler native solutions compare
 ### #swiftUI #iOSDevelopment #UIKit #TIL
 
 
+### Show SwiftUI using Xcode Playgrounds
+
+```swift
+PlaygroundPage.current.setLiveView(
+    MyView()
+        .frame(width: 300, height: 200) // make sure you use some frame here
+)
+
+```
